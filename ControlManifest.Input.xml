@@ -1,0 +1,28 @@
+<manifest>
+  <control namespace="MDT.Components" constructor="LookupChoice" version="0.0.1" display-name-key="LookupChoice" description-key="LookupChoice description" control-type="virtual" >
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="lookupControl" display-name-key="lookupControl" description-key="lookup Control Description" of-type="Lookup.Simple" usage="bound" required="true" />
+    <property name="sortByName" display-name-key="sortByName_Display_Key" description-key="sortByName_Desc_Key" of-type="Enum" default-value="0" usage="input" required="true">
+      <value name="Yes" display-name-key="yes_Display_Key" description-key="yes_Desc_Key">1</value>
+      <value name="No" display-name-key="no_Display_Key" description-key="no_Desc_Key">0</value>
+    </property>
+    <property name="mruSize" display-name-key="mruSize_Display_Key" description-key="mruSize_Desc_Key" of-type="Whole.None" usage="input" default-value="3" required="false" />
+    <property name="attributemask" display-name-key="attributemask_Display_Key" description-key="attributemask_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.46.2" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/LookupChoice.css" order="1" />
+      <resx path="strings/LookupChoice.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API -->
+    <feature-usage>
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>
